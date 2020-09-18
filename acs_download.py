@@ -33,6 +33,7 @@ def compose_urls(year, list_variables, state, geography):
     params_for_all_county_fips = {'get': 'NAME',
                                   'for': 'county:*',
                                   'in': f'state:{state_fips}',
+                                  'key': 'd075cdcda02ffecadbbf0907dc3f72b6fcb0171b',
                                   }
     url_for_all_county_fips = base_url + urllib.parse.urlencode(params_for_all_county_fips)
     json_for_all_county_fips = get_json_from_url(url_for_all_county_fips)
@@ -42,6 +43,7 @@ def compose_urls(year, list_variables, state, geography):
         params = {'get': ','.join(list_variables),
                   'for': f'{geography}:*',
                   'in': ' '.join([f'state:{state_fips}', f'county:{county_fips}']),
+                  'key': 'd075cdcda02ffecadbbf0907dc3f72b6fcb0171b',
                   }
 
         county_url_list.append(base_url + urllib.parse.urlencode(params))

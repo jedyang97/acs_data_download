@@ -3,7 +3,8 @@
 ## 0. Install the dependencies
 Run:
 ```angular2
-python3 -m venv acs-env
+virtualenv -p python3.6 venv
+source venv/bin/activate
 pip install -r requirements.txt
 ```
 
