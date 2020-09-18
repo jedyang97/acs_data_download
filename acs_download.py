@@ -41,9 +41,9 @@ def compose_urls(year, list_variables, state, geography):
                                   }
     url_for_all_county_fips = base_url + urllib.parse.urlencode(params_for_all_county_fips)
     json_for_all_county_fips = get_json_from_url(url_for_all_county_fips)
-    list_all_count_fips = np.array(json_for_all_county_fips)[1:, -1].tolist()
+    list_all_county_fips = np.array(json_for_all_county_fips)[1:, -1].tolist()
 
-    for county_fips in list_all_count_fips:
+    for county_fips in list_all_county_fips:
         params = {'get': ','.join(list_variables),
                   'for': f'{geography}:*',
                   'in': ' '.join([f'state:{state_fips}', f'county:{county_fips}']),
