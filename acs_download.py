@@ -59,8 +59,8 @@ def map_variable_ids_to_names(list_variable_ids):
     json_variables_id_to_name_map = get_json_from_url('https://api.census.gov/data/2018/acs/acs5/variables.json')
     names = []
     for variable_id in list_variable_ids:
-        if variable_id in json_variables_id_to_name_map:
-            names.append(json_variables_id_to_name_map[variable_id]['label'])
+        if variable_id in json_variables_id_to_name_map['variables']:
+            names.append(json_variables_id_to_name_map['variables'][variable_id]['label'])
         else:
             names.append(variable_id)
     return names
