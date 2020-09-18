@@ -20,12 +20,12 @@ sh get_data.sh
 
 Run:
 ```angular2
-sh transform.sh
+sh transform_data.sh
 ```
 
 ## 3. Load
 
 Run:
 ```angular2
-sh load.sh
+sh load_data.sh
 ```
