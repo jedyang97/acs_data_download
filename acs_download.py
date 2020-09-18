@@ -12,8 +12,12 @@ from tqdm import tqdm
 
 
 def get_json_from_url(url):
-    response = requests.get(url, allow_redirects=True)
-    response = response.json()
+    try:
+        response = requests.get(url, allow_redirects=True)
+        response = response.json()
+    except:
+        import ipdb
+        ipdb.set_trace()
 
     return response
 
